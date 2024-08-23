@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#test">Typing Test</a></li>
+        </ul>
+    </nav>
+
+    <section id="test" class="typing-test">
+        <div class="word-container">
+            <div class="word-line" id="wordLine"></div>
+        </div>
+        <input type="text" id="typingInput" autocomplete="off" disabled oninput="checkInput()" />
+        <div class="stats">
+            <div class="stat">Time: <span id="timer">60</span>s</div>
+            <div class="stat">WPM: <span id="wpm">0</span></div>
+            <div class="stat">Errors: <span id="errors">0</span></div>
+            <div class="stat">Accuracy: <span id="accuracy">0</span>%</div>
+        </div>
+        <button onclick="startTest()">Start Test</button>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
