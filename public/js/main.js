@@ -17,19 +17,17 @@ const errorsDisplay = document.getElementById('errors');
 function generateWords(num) {
     const wordList = ['example', 'typing', 'speed', 'test', 'practice', 'keyboard', 'improve', 'accuracy', 'random', 'words'];
     words = Array(num).fill().map(() => wordList[Math.floor(Math.random() * wordList.length)]);
-    updateWordLine(); // Call this function to display the words correctly
+    updateWordLine();
 }
 
 function updateWordLine() {
-    // Clear the existing content
     wordLine.innerHTML = '';
-    
-    // Add each word as a span element
+
     words.forEach((word, index) => {
         const wordSpan = document.createElement('span');
-        wordSpan.textContent = word + ' '; // Add space between words
+        wordSpan.textContent = word + ' ';
         if (index === currentIndex) {
-            wordSpan.classList.add('highlight'); // Highlight the current word
+            wordSpan.classList.add('highlight');
         }
         wordLine.appendChild(wordSpan);
     });
@@ -37,7 +35,7 @@ function updateWordLine() {
 
 function startTest() {
     resetTest();
-    generateWords(200);  // Generate a large number of words for continuous typing
+    generateWords(200);
     typingInput.disabled = false;
     typingInput.value = '';
     typingInput.focus();
@@ -64,7 +62,7 @@ function checkInput() {
     
     if (inputText === currentWord && event.inputType === "insertText" && inputText.length > 1) {
         correctWords++;
-        typedChars += inputText.length + 1;  // Include space
+        typedChars += inputText.length + 1;
         currentIndex++;
         typingInput.value = '';
         updateWordLine();
